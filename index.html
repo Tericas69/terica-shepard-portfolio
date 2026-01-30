@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Terica Shepard – IT & Cybersecurity Professional</title>
+  <meta name="description" content="Army veteran and IT & Cybersecurity professional with foundational cloud, security, and AI exposure through projects, certifications, and applied work." />
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS (scroll animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #4B5320;
+      --highlight: #C2B280;
+      --text: #FFFFFF;
+      --background: #111111;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; background: var(--background); color: var(--text); line-height: 1.6; }
+
+    /* GLOBAL LINKS (white) */
+    a { color: var(--text); text-decoration: none; }
+    a:hover { color: var(--highlight); text-decoration: underline; }
+
+    /* Background image overlay */
+    .background-image {
+      position: fixed;
+      inset: 0;
+      background-image: url("assets/images/cyberimage.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.08;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.92); /* fallback always works */
+  padding: 1rem 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  /* blur effect for browsers that support it */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+
+    .nav-content { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--highlight);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .nav-links a { font-weight: 600; }
+    .nav-links a:hover { color: var(--highlight); text-decoration: none; }
+
+    section { padding: 3.25rem 0; }
+    .spacer-top { padding-top: 90px; } /* clears fixed nav */
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--highlight);
+      margin: 2rem 0 1rem;
+      border-bottom: 2px solid var(--secondary);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text h1 { font-size: 2.8rem; color: var(--highlight); margin-bottom: 0.35rem; }
+    .hero-text h2 { font-size: 1.15rem; opacity: 0.95; margin-bottom: 1rem; font-weight: 600; }
+    .hero-text p { font-size: 1.05rem; max-width: 56ch; }
+
+    .hero-image { display: flex; justify-content: center; }
+    .profile-container {
+      width: 320px;
+      height: 380px;
+      border: 3px solid var(--secondary);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* GRID / CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-left: 4px solid var(--secondary);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .card h3 { color: var(--highlight); margin-bottom: 0.5rem; }
+    .card ul { padding-left: 1.15rem; }
+    .card li { margin: 0.3rem 0; }
+
+    /* TIMELINE */
+    .timeline-item {
+      border-left: 2px solid var(--secondary);
+      margin: 1rem 0;
+      padding-left: 1rem;
+    }
+    .timeline-date { color: var(--highlight); font-weight: bold; }
+
+    /* CERTS LIST */
+    .cert-list { list-style: disc; padding-left: 1.25rem; }
+    #certifications a { color: var(--text); }
+    #certifications a:hover { color: var(--highlight); }
+
+    /* CONNECT */
+    .contact-button {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--text);
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+    .contact-button:hover { color: var(--text); opacity: 0.95; text-decoration: none; }
+
+    .social-links { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+    .social-links a { color: var(--text); font-size: 1.4rem; }
+    .social-links a:hover { color: var(--highlight); }
+
+    footer {
+      background: rgba(0,0,0,0.85);
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      color: var(--highlight);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 1rem; }
+      .hero-text p { max-width: 100%; }
+      .profile-container { width: 290px; height: 340px; }
+      .nav-links { gap: 0.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-image"></div>
+
+  <nav>
+    <div class="container nav-content">
+      <a href="#home" class="logo">TS</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="spacer-top">
+    <!-- HERO -->
+    <section id="home" class="hero container">
+      <div class="hero-text" data-aos="fade-right">
+        <h1>Terica Shepard</h1>
+        <h2>IT & Cybersecurity Professional | Army Veteran | AWS Certified</h2>
+        <p>
+          Security and CloudOps professional with hands-on experience across cloud platforms, cybersecurity fundamentals,
+          and emerging AI-driven technologies. Proven ability to support secure, compliance-driven environments through
+          system hardening, access controls, automation, and cloud integration. Brings a disciplined, mission-focused mindset
+          from military service and is actively deepening expertise in how cloud, cybersecurity, and AI converge to strengthen
+          resilience, scalability, and modern enterprise operations.
+        </p>
+      </div>
+
+      <div class="hero-image" data-aos="fade-left">
+        <div class="profile-container">
+          <img src="assets/images/profile.png" alt="Terica Shepard" class="profile-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container" data-aos="fade-up">
+      <h2 class="section-title">About</h2>
+
+      <div class="card">
+        <p>
+          One of my final military assignments was serving as a <strong>Program Manager at Department of the Army Headquarters</strong>,
+          where I supported personnel systems, compliance programs, and operational readiness. In this role, I was entrusted with
+          <strong>authorized privileged access to enterprise Army personnel systems</strong>, supporting training records, duty status,
+          reassignments, and reenlistment workflows within a highly regulated environment.
+        </p>
+        <p style="margin-top:0.75rem;">
+          I combine <strong>hands-on initiative from small business operations</strong> with structured experience from the
+          <strong>Army Human Resources Command</strong>, working within high-trust, role-based access systems and managing sensitive data
+          in mission-critical contexts. This foundation supports my continued growth in <strong>cybersecurity, cloud infrastructure,
+          governance, and project delivery</strong>.
+        </p>
+        <p style="margin-top:0.75rem;">
+          Just as I once protected missions and personnel, I now apply that same responsibility to <strong>securing digital environments</strong>,
+          strengthening systems, and supporting <strong>resilient, well-governed technology operations</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="container" data-aos="fade-up">
+      <h2 class="section-title">Education</h2>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Dec 2025</div>
+        <h3>Bachelor of Applied Technology, Cybersecurity</h3>
+        <p>Collin College, Frisco, TX</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">May 2026</div>
+        <h3>Associate of Applied Science, Associate of Applied Science, Cloud Computing</h3>
+        <p>Collin College, Frisco, TX</p>
+      </div>
+
+      <div class="card" style="margin-top:1rem;">
+        <h3 style="color: var(--highlight);">Certificates & Occupational Skill Awards</h3>
+        <ul style="padding-left:1.25rem; margin-top:0.75rem;">
+          <li><strong>Occupational Skill Award (OSA): Entry-Level Network Support</strong> <em>Completed May 14, 2023</em></li>
+          <li><strong>Cybersecurity Infrastructure Technician Certificate</strong> <em>Completed December 10, 2023</em></li>
+          <li><strong>Information Systems Cybersecurity Certificate</strong> <em>Completed December 10, 2023</em></li>
+          <li><strong>Information Systems Cybersecurity Professional Certificate</strong> <em>Completed May 12, 2024 · Cum Laude</em></li>
+          <li><strong>Infrastructure Track – Infrastructure Technician (CCNA) Certificate</strong> <em>Completed August 11, 2024 · Cum Laude</em></li>
+          <li><strong>Cloud Computing – Cloud Infrastructure Technician Certificate</strong> <em>Completed May 18, 2025 · Cum Laude</em></li>
+          <li><strong>Infrastructure Track – Datacenter Technician Certificate</strong> <em>Completed August 17, 2025 · Cum Laude</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="container" data-aos="fade-up">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Tanium – Support Technical Account Management Intern</h3>
+          <p><em>June 2024 – August 2024</em></p>
+          <p>Collaborated on live security cases and DevSecOps deployments. Documented best practices for securing systems and tracked incidents to support enterprise compliance.</p>
+        </div>
+
+        <div class="card">
+          <h3>MTX Group (via NPower) – Virtual Intern</h3>
+          <p><em>July 2020 – September 2020</em></p>
+          <p>Supported technical teams with CRM workflow configuration, documentation, and delivery coordination. Worked in ticketing and client delivery processes to strengthen quality and consistency.</p>
+        </div>
+
+        <div class="card">
+          <h3>Collin College – Veterans Services Work Study</h3>
+          <p><em>October 2024 – May 2025</em></p>
+          <p>Supported veterans with benefits processes, maintained sensitive records under FERPA, and coordinated outreach programs and events.</p>
+        </div>
+
+        <div class="card">
+          <h3>Entrepreneur – Signing Service Notary Public</h3>
+          <p><em>2017 – Present</em></p>
+          <p>Developed operational SOPs and data protection practices for a home-based business, emphasizing privacy, secure handling of sensitive records, and process consistency.</p>
+        </div>
+
+        <div class="card">
+          <h3>U.S. Army – Human Resource / Programs Manager</h3>
+          <p><em>2005 – 2012</em></p>
+          <p>Supported regulated personnel operations, advised leadership on policy compliance, and worked within high-trust systems and access controls to protect sensitive information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="container" data-aos="fade-up">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Cybersecurity & Systems</h3>
+          <ul>
+            <li>Identity and Access Management (IAM), MFA fundamentals</li>
+            <li>Incident response fundamentals and documentation</li>
+            <li>Risk management and governance support</li>
+            <li>Active Directory and Group Policy exposure</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cloud & AI Foundations</h3>
+          <ul>
+            <li>AWS cloud operations and core services</li>
+            <li>Cloud security fundamentals and shared responsibility</li>
+            <li>AI concepts and responsible-use awareness</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Programming & Tools</h3>
+          <ul>
+            <li>Python (foundational), HTML, CSS</li>
+            <li>Jira and Salesforce exposure</li>
+            <li>Documentation, reporting, and process improvement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="container" data-aos="fade-up">
+      <h2 class="section-title">Certifications</h2>
+
+      <ul class="cert-list">
+        <li>
+          <a href="https://www.credly.com/users/terica-shepard/badges#credly" target="_blank" rel="noopener noreferrer">
+            Certification Portfolio (Credly)
+          </a>
+        </li>
+        <li>
+          <a href="https://www.credly.com/org/isc2/badge/certified-in-cybersecurity-cc" target="_blank" rel="noopener noreferrer">
+            ISC² – Certified in Cybersecurity (CC)
+          </a> · 2023
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/fe386019-f9d9-4386-9cc1-b1f90cd3b77d" target="_blank" rel="noopener noreferrer">
+            CompTIA Cloud Essentials+
+          </a> · 2024
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/683a5b00-4e22-43ea-9dbe-1cec753fd4bf" target="_blank" rel="noopener noreferrer">
+            CompTIA Security+
+          </a> · 2023
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/57d2dbe5-6cb3-4b28-a131-0a6e14a8caaf" target="_blank" rel="noopener noreferrer">
+            AWS Certified Cloud Practitioner
+          </a> · 2024
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/70dc1ff7-a4e2-4298-969b-6eed5f59a423" target="_blank" rel="noopener noreferrer">
+            AWS Certified AI Practitioner
+          </a> · 2025
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container" data-aos="fade-up">
+      <h2 class="section-title">Projects & Achievements</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>ISACA 2023 Case Competition</h3>
+          <p>Founded and mentored two student teams, earning 2nd place regionally. Focused on risk management, presentation, and governance strategy.</p>
+        </div>
+
+        <div class="card">
+          <h3>Hackathon Threat Simulations</h3>
+          <p>Participated in cybersecurity hackathons to strengthen investigative analysis, incident documentation, and teamwork under time constraints.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect" class="container" data-aos="fade-up" style="text-align:center;">
+      <h2 class="section-title">Connect</h2>
+      <p>Reach out for collaborations, networking, or cybersecurity initiatives.</p>
+
+      <a href="mailto:tericas@proton.me" class="contact-button">Email Terica</a>
+
+      <p style="margin-top:1rem;">
+        Phone:
+        <a href="tel:+15127904757" style="color: var(--highlight); text-decoration: underline;">512-790-4757</a>
+      </p>
+
+      <div class="social-links">
+        <a href="https://github.com/Tericas69" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/terica-shepard" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Army Strong for Life | Security through Service and Privacy</p>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true, offset: 100 });
+  </script>
+</body>
+</html>
+
